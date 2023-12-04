@@ -6,6 +6,6 @@ add_library(glad STATIC
     include/glad/glad.h
 )
 
-target_include_directories(glad PUBLIC #Static lib for now
+target_include_directories(glad PUBLIC
     ${CMAKE_SOURCE_DIR}/Wisteria/Thirdparty/
 )
