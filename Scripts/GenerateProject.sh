@@ -1,0 +1,1 @@
+cmake --fresh --preset linux && cp build/linux/compile_commands.json ./compile_commands.json && echo "----Build Done----" &&cd build/linux && make && echo "----Compile Done----" && Sandbox/Sandbox && cd ../..

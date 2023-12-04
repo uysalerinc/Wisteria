@@ -1,0 +1,48 @@
+{
+  "version": 7,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows",
+      "displayName": "Windows Config",
+      "description": "Windows build using Visual Studio generator",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/${presetName}",
+      "architecture": {
+        "value": "x64"
+      },
+      "cacheVariables": {
+        "BUILD_DIR": "${sourceDir}/${presetName}"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": ["Windows"]
+        }
+      }
+    },
+    {
+      "name": "linux",
+      "displayName": "Linux Config",
+      "description": "Linux build using Unix MakeFile generator",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "BUILD_DIR": "${sourceDir}/build/${presetName}"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows",
+      "configurePreset": "windows"
+    },
+    {
+      "name": "linux",
+      "configurePreset": "linux"
+    }
+  ]
+}
